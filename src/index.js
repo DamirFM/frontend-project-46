@@ -1,6 +1,10 @@
 
 import _ from 'lodash';
+const obj1 = path.resolve('../__fixtures__/file1.json');
+const obj2 = path.resolve('../__fixtures__/file2.json');
 
+const firstObj = JSON.parse(obj1);
+const secondObj = JSON.parse(obj2);
 // BEGIN (write your solution here)
 export default function genDiff(firstObj, secondObj) {
     const current = {};
