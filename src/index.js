@@ -25,5 +25,6 @@ export default function genDiff(firstObj, secondObj) {
       }
     }
     return current;
+    
   }
   // END
