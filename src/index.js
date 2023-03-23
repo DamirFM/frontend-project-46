@@ -1,41 +1,40 @@
-import {readFileSync} from 'fs';
+import fs from 'fs';
 import  _  from 'lodash';
 
-function denDiff (path1, path2)  {
-  const data1 = readFile(path1);
-  const data2 = readFile(path2);
-  const current = {};
+const genDiff = (data1, data2) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
-  const uni = _.union(keys1, keys2);
-  for (const key of uni) {
-    console.log(key)
-    // const check1 = Object.hasOwn(data1, key);
-    // const check2 = Object.hasOwn(data2, key);
-    // if (!check2) {
-    //   current[key] = 'deleted';
-    // } else if (check2) {
-    //   current[key] = 'added';
-    // } if (check1 && check2) {
-    //   current[key] = 'changed';
-    // } if (data1[key] === data2[key]) {
-    //   current[key] = 'unchanged';
-    // }
+  const keys = _.union(keys1, keys2); 
+
+  const result = {};
+  for (const key of keys) {
+    //console.log(key)
+    if (!Object.hasOwn(data1, key)) {
+      result[key] = '+';
+    } else if (!Object.hasOwn(data2, key)) {
+      result[key] = '-';
+    // } else if (data1[key] !== data2[key]) {
+    //   result[key] = 'changed';
+    } else {
+      result[key] = '';
+    }
+    
   }
-  return current;
+  console.log(result)
+  return result;
 };
 
 export default function (filepath1, filepath2)  {
 
 
   
-const data1 = readFileSync(filepath1, 'utf-8');
-const data2 = readFileSync(filepath2, 'utf-8');
+const data1 = fs.readFileSync(filepath1, 'utf-8');
+const data2 = fs.readFileSync(filepath2, 'utf-8');
 const parsedData1 = JSON.parse(data1);
 const parsedData2 = JSON.parse(data2);
 
-console.log(parsedData1)
-console.log(parsedData2)
-denDiff(parsedData1,parsedData2);
+// console.log(parsedData1)
+// console.log(parsedData2)
+genDiff(parsedData1,parsedData2);
 }  
 
