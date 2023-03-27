@@ -18,8 +18,6 @@ const genDiff = (data1, data2) => {
     } else {
       result[key] = '';
     }
-
-
   }
   console.log(result)
   return result;
