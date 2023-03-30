@@ -5,12 +5,13 @@ const genDiff = (data1, data2) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
   const keys = _.union(keys1, keys2); 
-
+  const entries = Object.entries(obj);
+  //console.log(data1, data2)
   const result = {};
   for (const key of keys) {
-    //console.log(key)
+    console.log(key)
     if (!Object.hasOwn(data1, key)) {
-      result[key] = '+';
+      result[key] = '+' ;
     } else if (!Object.hasOwn(data2, key)) {
       result[key] = '-';
     // } else if (data1[key] !== data2[key]) {
@@ -19,7 +20,8 @@ const genDiff = (data1, data2) => {
       result[key] = '';
     }
   }
-  console.log(result)
+  
+  //console.log(result)
   return result;
 };
 
