@@ -20,10 +20,11 @@ const genDiff = (data1, data2) => {
       result[key] = '';
     }
   }
-  
+
   //console.log(result)
   return result;
 };
+
 
 export default function (filepath1, filepath2)  {
 
