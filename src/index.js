@@ -22,8 +22,6 @@ const genDiff = (data1, data2) => {
   }
 
 
-  
-
   //console.log(result)
   return result;
 };
