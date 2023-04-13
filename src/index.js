@@ -1,29 +1,24 @@
 import fs from 'fs';
 import  _  from 'lodash';
 
-const genDiff = (data1, data2) => {
-  const keys1 = Object.keys(data1);
-  const keys2 = Object.keys(data2);
-  const keys = _.union(keys1, keys2); 
-  const entries = Object.entries(obj);
-  //console.log(data1, data2)
-  const result = {};
-  for (const key of keys) {
-    console.log(key)
-    if (!Object.hasOwn(data1, key)) {
-      result[key] = '+' ;
-    } else if (!Object.hasOwn(data2, key)) {
-      result[key] = '-';
-    // } else if (data1[key] !== data2[key]) {
-    //   result[key] = 'changed';
-    } else {
-      result[key] = '';
-    }
-  }
+const genDiff = (data1, data2, replacer =' ') => {
+  // const keys1 = Object.keys(data1);
+  // const keys2 = Object.keys(data2);
+  // const keys = _.union(keys1, keys2); 
+
+  const indentSize = 1; // размер пробела
+  const currentIndent = replacer.repeat(indentSize); //формирование отступа для текущей строки
+  const brecketIndent = replacer.repeat(indentSize - 1);
+
+  const mergedObjects = Object.assign(data1, data2);
+  const array = Object.entries(mergedObjects);
+  //console.log(mergedObjects[value])
+  const lines = array.map(([key, val]) => `${currentIndent}${key}:  ${val}`);
+  const result = [`{`, ...lines, `${brecketIndent}}`].join('\n');
 
   
 
-  //console.log(result)
+  console.log(result)
   return result;
 };
 
