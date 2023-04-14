@@ -13,8 +13,9 @@ const genDiff = (data1, data2, replacer =' ') => {
 
 
   const lines = sortedKeys.map((key) => {
+    console.log(key)
     if (!Object.hasOwn(data1, key) && Object.hasOwn(data2, key)) {
-      return `${currentIndent}+${currentIndent}${key}` //added
+      return `${currentIndent}+${currentIndent}${data2[key]}`//added
 
     } else if (Object.hasOwn(data1, key) && !Object.hasOwn(data2, key)) {
       return `${currentIndent}-${currentIndent}${key}` //deleted
@@ -32,10 +33,9 @@ const genDiff = (data1, data2, replacer =' ') => {
 
   
 
-  console.log(result)
+   console.log(result)
   return result;
 };
-
 
 export default function (filepath1, filepath2)  {
 
