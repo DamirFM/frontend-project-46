@@ -13,20 +13,14 @@ const genDiff = (data1, data2, replacer =' ') => {
 
 
   const lines = sortedKeys.map((key) => {
-    console.log(key)
-    if (!Object.hasOwn(data1, key) && Object.hasOwn(data2, key)) {
-      return `${currentIndent}+${currentIndent}${data2[key]}`//added
-
-    } else if (Object.hasOwn(data1, key) && !Object.hasOwn(data2, key)) {
-      return `${currentIndent}-${currentIndent}${key}` //deleted
-
-    } else if (data1[key] === data2[key]) {
-      return `${currentIndent}${currentIndent}${key}`  //unchanged
-
-    // } else {
-    //   result[key] = 'unchanged';
-     }
-  
+    if (_.has(data1, key) && _.has(data2, key)) {
+      if (data1[key] === data2[key]) {
+        return `  ${key}: ${data1[key]}`;
+      }
+      return [`- ${key}: ${data1[key]}`, `+ ${key}: ${data2[key]}`];
+    } if (_.has(data1, key) && !(_.has(data2, key))) {
+      return `- ${key}: ${data1[key]}`;
+    } return `+ ${key}: ${data2[key]}`;
   });
 
   const result = [`{`, ...lines, `${brecketIndent}}`].join('\n');
@@ -48,5 +42,4 @@ const parsedData2 = JSON.parse(data2);
 // console.log(parsedData1)
 // console.log(parsedData2)
 genDiff(parsedData1,parsedData2);
-}  
-
+}
