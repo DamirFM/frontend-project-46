@@ -10,19 +10,22 @@ const genDiff = (data1, data2, replacer =' ') => {
   const indentSize = 1; // размер пробела
   const currentIndent = replacer.repeat(indentSize); //формирование отступа для текущей строки
   const brecketIndent = replacer.repeat(indentSize - 1);
-
+//_.has
 
   const lines = sortedKeys.map((key) => {
     if (_.has(data1, key) && _.has(data2, key)) {
       if (data1[key] === data2[key]) {
-        return `  ${key}: ${data1[key]}`;
+        return `${currentIndent}${currentIndent}${currentIndent}${key}: ${data1[key]}`;
       }
-      return [`- ${key}: ${data1[key]}`, `+ ${key}: ${data2[key]}`];
+      return [`${currentIndent}- ${key}: ${data1[key]}`, `${currentIndent}+ ${key}: ${data2[key]}`].join('\n');
     } if (_.has(data1, key) && !(_.has(data2, key))) {
-      return `- ${key}: ${data1[key]}`;
-    } return `+ ${key}: ${data2[key]}`;
+      return `${currentIndent}- ${key}: ${data1[key]}`;
+    } return `${currentIndent}+ ${key}: ${data2[key]}`;
   });
 
+
+
+  
   const result = [`{`, ...lines, `${brecketIndent}}`].join('\n');
 
   
