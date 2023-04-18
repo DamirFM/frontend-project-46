@@ -13,14 +13,22 @@ const genDiff = (data1, data2, replacer =' ') => {
 //_.has
 
   const lines = sortedKeys.map((key) => {
-    if (_.has(data1, key) && _.has(data2, key)) {
-      if (data1[key] === data2[key]) {
-        return `${currentIndent}${currentIndent}${currentIndent}${key}: ${data1[key]}`;
-      }
-      return [`${currentIndent}- ${key}: ${data1[key]}`, `${currentIndent}+ ${key}: ${data2[key]}`].join('\n');
-    } if (_.has(data1, key) && !(_.has(data2, key))) {
-      return `${currentIndent}- ${key}: ${data1[key]}`;
-    } return `${currentIndent}+ ${key}: ${data2[key]}`;
+   console.log(key, data1[key], data2[key])
+   if (_.has(data1, key) && _.has(data2, key)) {
+     if ( data1[key] === data2[key]) {
+       return `${currentIndent}  ${key}: ${data1[key]}`
+     }
+     if ( data1[key] !== data2[key]) {
+      return [`${currentIndent}-${currentIndent}${key}: ${data1[key]}`,
+      `${currentIndent}+${currentIndent}${key}: ${data2[key]}`].join('\n')
+     }
+   }
+   if (_.has(data1, key) && !_.has(data2, key)) {
+     return `${currentIndent}-${currentIndent}${key}: ${data1[key]}`
+   }
+   if (!_.has(data1, key) && _.has(data2, key)) {
+    return `${currentIndent}+${currentIndent}${key}: ${data2[key]}`
+  }
   });
 
 
