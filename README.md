@@ -7,4 +7,4 @@
 
 ### Maintainability Badge:
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/6625d39ccf04938eabca/maintainability)](https://codeclimate.com/github/DamirFM/frontend-project-46)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e53865ef05d72c53d1ab/maintainability)](https://codeclimate.com/github/DamirFM/frontend-project-46/maintainability)
