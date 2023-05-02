@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/DamirFM/frontend-project-46#readme",
   "dependencies": {
+    "@jest/globals": "^29.5.0",
     "commander": "^10.0.0",
     "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "import/no-extraneous-dependencies": [s"error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
   },
   "devDependencies": {
     "eslint": "^8.38.0",
