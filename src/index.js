@@ -34,7 +34,6 @@ const genDiff = (data1, data2, replacer = ' ') => {
 
   const result = ['{', ...lines, `${brecketIndent}}`].join('\n');
 
-  console.log(result);
   return result;
 };
 export default function (filepath1, filepath2) {
