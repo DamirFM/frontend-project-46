@@ -1,4 +1,4 @@
-import fs from 'fs';
+
 import _ from 'lodash';
 
 const genDiff = (data1, data2, replacer = ' ') => {
@@ -13,7 +13,7 @@ const genDiff = (data1, data2, replacer = ' ') => {
   // _.has
 
   const lines = sortedKeys.map((key) => {
-    console.log(key, data1[key], data2[key]);
+   
     if (_.has(data1, key) && _.has(data2, key)) {
       if (data1[key] === data2[key]) {
         return `${currentIndent}  ${key}: ${data1[key]}`;
@@ -33,16 +33,7 @@ const genDiff = (data1, data2, replacer = ' ') => {
   });
 
   const result = ['{', ...lines, `${brecketIndent}}`].join('\n');
-
+  console.log(result)
   return result;
 };
-export default function (filepath1, filepath2) {
-  const data1 = fs.readFileSync(filepath1, 'utf-8');
-  const data2 = fs.readFileSync(filepath2, 'utf-8');
-  const parsedData1 = JSON.parse(data1);
-  const parsedData2 = JSON.parse(data2);
-
-  // console.log(parsedData1)
-  // console.log(parsedData2)
-  genDiff(parsedData1, parsedData2);
-}
+export default (genDiff);
