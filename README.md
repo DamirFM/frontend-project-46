@@ -1,9 +1,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/DamirFM/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
 
-### Linter Badge:
+### Linter-test Badge:
 
-[![Lint](https://github.com/DamirFM/frontend-project-46/workflows/linter-tests/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
+[![Lint](https://github.com/DamirFM/frontend-project-46/workflows/linter-test/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
 
 ### Maintainability Badge:
 
