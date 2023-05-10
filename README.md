@@ -3,11 +3,9 @@
 
 ### Linter Badge:
 
-[![Lint](https://github.com/DamirFM/frontend-project-46/workflows/make-lint/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
+[![Lint](https://github.com/DamirFM/frontend-project-46/workflows/linter-tests/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
 
 ### Maintainability Badge:
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/e53865ef05d72c53d1ab/maintainability)](https://codeclimate.com/github/DamirFM/frontend-project-46/maintainability)
 
-### Event Github Actions demo Badge:
-[![Actions Status](https://github.com/DamirFM/frontend-project-46/workflows/GitHub_Actions_Demo/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)

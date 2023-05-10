@@ -1,0 +1,19 @@
+name: linter-test
+on: push
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+      strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+ # Клонируем репозиторий
+      - uses: actions/checkout@v3
+      # Устанавливаем Node.js
+      - uses: actions/setup-node@v3
+      # Ставим зависимости
+      - run: npm install
+      # Запускаем линтер
+      - run: npm run lint
+      - name: run tests
+        run: npm test
