@@ -3,7 +3,7 @@
 
 ### linter-test Badge:
 
-[![Lint](https://github.com/DamirFM/frontend-project-46/workflows/linter-test/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
+[![linter-test](https://github.com/DamirFM/frontend-project-46/workflows/linter-test/badge.svg)](https://github.com/DamirFM/frontend-project-46/actions)
 
 ### Maintainability Badge:
 
