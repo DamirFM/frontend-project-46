@@ -1,4 +1,5 @@
 import fs from 'fs';
+// eslint-disable-next-line import/named
 import { genDiff } from './index.js';
 
 export default (filepath1, filepath2) => {
