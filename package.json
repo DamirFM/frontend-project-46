@@ -7,7 +7,8 @@
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "int-test": "mocha --require babel-core/register --recursive test"
   },
   "type": "module",
   "repository": {
@@ -36,5 +37,4 @@
   "directories": {
     "test": "tests"
   }
-  
 }
