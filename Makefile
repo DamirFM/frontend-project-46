@@ -8,4 +8,6 @@ fix: # запускать исправление ошибок
 	npx eslint --fix .
 publish:
 	npm publish --dry-run
+coverage:
+	npm test -- --coverage
 
